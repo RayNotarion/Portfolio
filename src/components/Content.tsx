@@ -10,13 +10,14 @@ import {
   otherStacks,
 } from "../constants/stacks";
 import { projects } from "../constants/projects";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from "@/components/ui/carousel";
+import GalleryViewer from "@/components/GalleryViewer";
 import { galleryData } from "@/constants/gallery";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { socialLinks } from "../constants/socials";
@@ -79,10 +80,11 @@ const Content = () => {
                   <div key={index} className="relative flex items-start gap-4">
                     {/* Timeline dot */}
                     <div
-                      className={`w-3 h-3 rounded-full z-10 shrink-0 ${exp.current
-                        ? "bg-black dark:bg-white"
-                        : "bg-gray-300 dark:bg-gray-600"
-                        }`}
+                      className={`w-3 h-3 rounded-full z-10 shrink-0 ${
+                        exp.current
+                          ? "bg-black dark:bg-white"
+                          : "bg-gray-300 dark:bg-gray-600"
+                      }`}
                     ></div>
 
                     {/* Content */}
@@ -222,8 +224,8 @@ const Content = () => {
               <span className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
                 online gaming
               </span>
-              . These activities help me maintain a healthy work-life balance and
-              provide a great way to unwind and relax.
+              . These activities help me maintain a healthy work-life balance
+              and provide a great way to unwind and relax.
             </p>
           </div>
 
@@ -268,7 +270,7 @@ const Content = () => {
           Gallery
         </h3>
 
-        <div className="relative">
+        {/* <div className="relative">
           <Carousel
             opts={{
               align: "start",
@@ -295,13 +297,15 @@ const Content = () => {
             <CarouselNext className="hidden md:flex -right-4 lg:-right-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 shadow-md hover:bg-gray-50 dark:hover:bg-gray-700" />
           </Carousel>
 
-          {/* Mobile navigation dots or swipe indicator */}
+
           <div className="flex justify-center mt-4 md:hidden">
             <p className="text-xs text-gray-500 dark:text-gray-400">
               Swipe to see more →
             </p>
           </div>
-        </div>
+        </div> */}
+
+        <GalleryViewer items={galleryData} />
       </div>
     </div>
   );

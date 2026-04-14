@@ -32,3 +32,7 @@ export interface GalleryItem {
   id: number;
   imgSrc: string;
 }
+
+export interface GalleryViewerProps {
+  items: GalleryItem[];
+}
