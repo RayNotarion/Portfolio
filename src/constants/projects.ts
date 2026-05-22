@@ -22,7 +22,7 @@ export const projects: Projects[] = [
   {
     title: "Vibly",
     description: "A web app tool for reviews",
-    link: "https://viblystudent.com",
-    domainName: "viblystudent.com",
+    link: "https://viblystudy.com",
+    domainName: "viblystudy.com",
   },
 ];
