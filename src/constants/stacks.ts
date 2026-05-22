@@ -28,6 +28,9 @@ export const backEndStacks: backEndSkills[] = [
     name: "Node.js",
   },
   {
+    name: "Express.js",
+  },
+  {
     name: "PHP",
   },
   {
@@ -53,6 +56,12 @@ export const otherStacks: otherSkills[] = [
   },
   {
     name: "Github Actions",
+  },
+  {
+    name: "Railway",
+  },
+  {
+    name: "Supabase",
   },
 ];
 
