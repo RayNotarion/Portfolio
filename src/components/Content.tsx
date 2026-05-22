@@ -236,8 +236,12 @@ const Content = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {projects.slice(0, 4).map((project, index) => (
-                <div
+                <a
                   key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${project.title} in a new tab`}
                   className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm transition-all cursor-pointer bg-white dark:bg-gray-800"
                 >
                   <h4 className="font-semibold text-sm text-gray-900 dark:text-white">
@@ -249,7 +253,7 @@ const Content = () => {
                   <span className="inline-block mt-2 bg-gray-100 dark:bg-gray-700 px-2 py-1 text-xs rounded text-gray-700 dark:text-gray-300">
                     {project.domainName}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
