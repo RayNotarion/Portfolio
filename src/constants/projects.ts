@@ -25,4 +25,16 @@ export const projects: Projects[] = [
     link: "https://viblystudy.com",
     domainName: "viblystudy.com",
   },
+  {
+    title: "SulongCV",
+    description: "A web app to generate resume",
+    link: "https://sulongcv.xyz",
+    domainName: "sulongcv.xyz",
+  },
+  {
+    title: "Typing Speed Test",
+    description: "A web app to test your speed in typing",
+    link: "https://typing-speed-test-gules-psi.vercel.app",
+    domainName: "typing-speed-test-gules-psi.vercel.app"
+  }
 ];

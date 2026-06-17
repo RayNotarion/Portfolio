@@ -14,6 +14,8 @@ import GalleryViewer from "@/components/GalleryViewer";
 import { galleryData } from "@/constants/gallery";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { socialLinks } from "../constants/socials";
+import { Link } from "react-router-dom";
+import ProjectCard from "@/components/ProjectCard";
 
 const Content = () => {
   return (
@@ -229,9 +231,12 @@ const Content = () => {
                 <HiOutlineFolderOpen className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                 Recent Projects
               </h3>
-              <span className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer">
+              <Link
+                to="/projects"
+                className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+              >
                 View All →
-              </span>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
