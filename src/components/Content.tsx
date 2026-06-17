@@ -15,7 +15,7 @@ import { galleryData } from "@/constants/gallery";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { socialLinks } from "../constants/socials";
 import { Link } from "react-router-dom";
-import ProjectCard from "@/components/ProjectCard";
+
 
 const Content = () => {
   return (
