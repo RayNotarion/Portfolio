@@ -17,7 +17,11 @@ export interface otherSkills {
   name: string;
 }
 
-export interface devOpsCloudSkills {
+export interface cmsSkills {
+  name: string;
+}
+
+export interface devToolsSkills {
   name: string;
 }
 
@@ -26,6 +30,7 @@ export interface Projects {
   description: string;
   link: string;
   domainName: string;
+  hosted: boolean;
 }
 
 export interface GalleryItem {

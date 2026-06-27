@@ -2,27 +2,27 @@ import type { Experience } from "../types";
 
 export const experienceData: Experience[] = [
   {
-    companyName: "JCG Marketing Group Inc.",
-    jobTitle: "Junior Web Developer",
-    date: "2025",
+    companyName: "DSWD - Dept. of Social Welfare and Development",
+    jobTitle: "Full-Stack Developer (OJT)",
+    date: "2026",
     current: true,
   },
   {
-    companyName: "DigiPlus Interactive Corp.",
-    jobTitle: "Front-End Developer Intern",
-    date: "2025",
+    companyName: "Alchemy RPG",
+    jobTitle: "Data Entry",
+    date: "2025 - 2026",
     current: false,
   },
   {
-    companyName: "McDonald's",
-    jobTitle: "Service Crew",
-    date: "2023",
+    companyName: "Phinma Upang College of Urdaneta",
+    jobTitle: "BS Computer Science",
+    date: "2022 – 2026",
     current: false,
   },
   {
     companyName: "Hello World!",
     jobTitle: "Wrote my first line of code",
-    date: "2018",
+    date: "2022",
     current: false,
   },
 ];

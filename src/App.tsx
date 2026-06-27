@@ -3,6 +3,8 @@ import "./App.css";
 import { ThemeProvider } from "./components/theme-provider";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
+import StacksPage from "./pages/StacksPage";
+import Chatbot from "./components/Chatbot";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
           }
         />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/stacks" element={<StacksPage />} />
       </Routes>
+      <Chatbot />
     </ThemeProvider>
   );
 }

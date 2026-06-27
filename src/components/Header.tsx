@@ -1,14 +1,15 @@
-import ProfileImage from "../assets/images/profile.png";
+import ProfileImage from "../assets/images/gallery/profile.png";
 import { ReactComponent as VerifiedCheck } from "../assets/svg/verified-check.svg";
 import { ReactComponent as Location } from "../assets/svg/location.svg";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { FaAngleRight } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { personalLinks } from "../constants/personal";
+import ToggleMode from "./ToggleMode";
 
 const Header = () => {
   return (
-    <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12 xl:px-16">
+    <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12 xl:px-16 text-gray-900 dark:text-white">
       <div className="flex gap-4 lg:gap-6">
         <div>
           <img
@@ -21,25 +22,24 @@ const Header = () => {
         <div className="flex flex-col gap-1">
           <div className="flex flex-col gap-1">
             <h3 className="text-lg lg:text-2xl font-bold flex items-center gap-2 text-gray-900 dark:text-white">
-              Rogel Gerodiaz
+              Raymund Notarion
               <VerifiedCheck className="w-4 h-4 lg:w-5 lg:h-5" />
             </h3>
             <h5 className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
-              <Location className="w-4 h-4" />
-              Metro Manila, Philippines
+              <Location className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+              Paniqui, Tarlac, Philippines
             </h5>
             <h4 className="text-xs lg:text-sm font-medium text-gray-800 dark:text-gray-300 mt-1">
-              Front-end Developer{" "}
-              <span className="text-gray-400 dark:text-gray-500">\</span> Web
-              Developer
+              Software Developer \ Web Developer
             </h4>
           </div>
           <div className="flex mt-3 gap-2">
             <a
               href={personalLinks.resume}
+              download="Raymund_Notarion_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="h-8 lg:h-9 px-3 lg:px-4 bg-black dark:bg-white text-white dark:text-black font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center gap-2"
+              className="h-8 lg:h-9 px-3 lg:px-4 bg-black dark:bg-white text-white dark:text-black font-medium text-xs lg:text-sm rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               <IoNewspaperOutline className="w-3 h-3 lg:w-4 lg:h-4" />
               Resume
@@ -47,7 +47,7 @@ const Header = () => {
             </a>
             <a
               href={personalLinks.email}
-              className="h-8 lg:h-9 px-4 lg:px-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2"
+              className="h-8 lg:h-9 px-4 lg:px-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium text-xs lg:text-sm rounded-lg hover:opacity-80 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               <IoIosSend className="w-6 h-3 lg:w-4 lg:h-4" />
               Send Email
@@ -55,6 +55,8 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      <ToggleMode />
     </header>
   );
 };

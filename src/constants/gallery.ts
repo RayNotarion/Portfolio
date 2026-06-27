@@ -1,20 +1,20 @@
 import type { GalleryItem } from "@/types";
-import Image1 from "@/assets/images/gallery/1.jpeg";
-import Image2 from "@/assets/images/gallery/2.jpeg";
-import Image3 from "@/assets/images/gallery/3.jpeg";
-import Image4 from "@/assets/images/gallery/4.jpeg";
-import Image5 from "@/assets/images/gallery/5.jpeg";
-import Image6 from "@/assets/images/gallery/6.jpeg";
-import Image7 from "@/assets/images/gallery/7.jpeg";
-import Image8 from "@/assets/images/gallery/8.jpeg";
-import Image9 from "@/assets/images/gallery/9.jpeg";
-import Image10 from "@/assets/images/gallery/10.jpeg";
-import Image11 from "@/assets/images/gallery/11.jpeg";
-import Image12 from "@/assets/images/gallery/12.jpeg";
-import Image13 from "@/assets/images/gallery/13.jpeg";
-import Image14 from "@/assets/images/gallery/14.jpeg";
-import Image15 from "@/assets/images/gallery/15.jpeg";
-import Image16 from "@/assets/images/gallery/16.jpeg";
+import Image1 from "@/assets/images/gallery/1.jpg";
+import Image2 from "@/assets/images/gallery/2.jpg";
+import Image3 from "@/assets/images/gallery/3.jpg";
+import Image4 from "@/assets/images/gallery/4.jpg";
+import Image5 from "@/assets/images/gallery/5.jpg";
+import Image6 from "@/assets/images/gallery/6.jpg";
+import Image7 from "@/assets/images/gallery/7.jpg";
+import Image8 from "@/assets/images/gallery/8.jpg";
+import Image9 from "@/assets/images/gallery/9.jpg";
+import Image10 from "@/assets/images/gallery/10.jpg";
+import Image11 from "@/assets/images/gallery/11.jpg";
+import Image12 from "@/assets/images/gallery/12.jpg";
+import Image13 from "@/assets/images/gallery/13.JPG";
+import Image14 from "@/assets/images/gallery/14.JPG";
+import Image15 from "@/assets/images/gallery/15.jpg";
+
 
 export const galleryData: GalleryItem[] = [
   {
@@ -76,9 +76,5 @@ export const galleryData: GalleryItem[] = [
   {
     id: 15,
     imgSrc: Image15,
-  },
-  {
-    id: 16,
-    imgSrc: Image16,
   },
 ];

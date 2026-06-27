@@ -2,16 +2,18 @@ import type { Projects } from "@/types";
 
 interface ProjectCardProps {
   project: Projects;
+  index?: number;
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, index = 0 }: ProjectCardProps) => {
   return (
     <a
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Open ${project.title} in a new tab`}
-      className="block border-b border-gray-200 dark:border-gray-700 pb-6 hover:opacity-80 transition-opacity"
+      className="animate-fade-slide-up block border-b border-gray-200 dark:border-gray-700 pb-6 hover:opacity-80 transition-opacity"
+      style={{ animationDelay: `${index * 0.1}s` }}
     >
       <h3 className="text-base font-semibold text-gray-900 dark:text-white">
         {project.title}
@@ -19,9 +21,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
         {project.description}
       </p>
-      <span className="inline-block mt-3 bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-mono rounded text-gray-700 dark:text-gray-300">
+      <span className="inline-block mt-3 bg-gray-100 dark:bg-[#111111] px-2.5 py-1 text-xs font-mono rounded text-gray-700 dark:text-gray-300">
         {project.domainName}
       </span>
+      {!project.hosted && (
+        <span className="inline-block mt-3 ml-2 bg-gray-100 dark:bg-gray-700 px-2.5 py-1 text-xs rounded text-gray-600 dark:text-gray-400">
+          Not Hosted
+        </span>
+      )}
     </a>
   );
 };

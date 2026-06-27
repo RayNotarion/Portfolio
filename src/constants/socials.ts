@@ -1,4 +1,5 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
 
 export interface SocialLink {
   name: string;
@@ -9,22 +10,17 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/rogel-gerodiaz-4732761b6/",
+    url: "https://www.linkedin.com/in/RayNotarion",
     icon: FaLinkedin,
   },
   {
     name: "GitHub",
-    url: "https://github.com/Rogel0",
+    url: "https://github.com/RayNotarion",
     icon: FaGithub,
   },
   {
-    name: "Instagram",
-    url: "https://www.instagram.com/wooojeeel/",
-    icon: FaInstagram,
+    name: "JobStreet",
+    url: "https://ph.jobstreet.com/profiles/raymund-notarion-1F3TqRjj1W",
+    icon: MdWork,
   },
-  {
-    name: "Facebook",
-    url: "https://www.facebook.com/rogel.gerodiaz30",
-    icon: FaFacebook,
-  }
 ];
