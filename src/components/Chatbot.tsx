@@ -1,13 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import Groq from "groq-sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { IoClose, IoSend } from "react-icons/io5";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import ProfileImage from "../assets/images/gallery/profile.png";
 
-const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || "");
 
 const SYSTEM_CONTEXT = `Act as Raymund's digital twin. Respond exactly how he thinks and communicates.
 
@@ -55,28 +52,46 @@ const Chatbot = () => {
     const userMessage = (text ?? input).trim();
     if (!userMessage || loading) return;
 
+    if (!import.meta.env.VITE_GEMINI_API_KEY) {
+      setInput("");
+      setMessages((prev) => [
+        ...prev,
+        { role: "user", text: userMessage },
+        {
+          role: "model",
+          text: "Gemini API key is not configured. Please add VITE_GEMINI_API_KEY to your .env file.",
+        },
+      ]);
+      return;
+    }
+
     setInput("");
     const newMessages: Message[] = [...messages, { role: "user", text: userMessage }];
     setMessages(newMessages);
     setLoading(true);
 
     try {
-      const response = await groq.chat.completions.create({
-        model: "llama-3.3-70b-versatile",
-        messages: [
-          { role: "system", content: SYSTEM_CONTEXT },
-          ...messages.map((m) => ({
-            role: m.role === "model" ? "assistant" : "user",
-            content: m.text,
-          })) as { role: "user" | "assistant"; content: string }[],
-          { role: "user", content: userMessage },
-        ],
-        max_tokens: 300,
+      const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash",
+        systemInstruction: SYSTEM_CONTEXT,
       });
-      const reply = response.choices[0]?.message?.content ?? "No response.";
+
+      const contents = [
+        ...messages.map((m) => ({
+          role: m.role,
+          parts: [{ text: m.text }],
+        })),
+        {
+          role: "user",
+          parts: [{ text: userMessage }],
+        },
+      ];
+
+      const result = await model.generateContent({ contents });
+      const reply = result.response.text() ?? "No response.";
       setMessages((prev) => [...prev, { role: "model", text: reply }]);
     } catch (error) {
-      console.error("Groq API error:", error);
+      console.error("Gemini API error:", error);
       setMessages((prev) => [...prev, { role: "model", text: "I'm having trouble connecting right now. Please try again in a moment." }]);
     } finally {
       setLoading(false);
