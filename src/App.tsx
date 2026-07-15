@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import StacksPage from "./pages/StacksPage";
 import Chatbot from "./components/Chatbot";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/stacks" element={<StacksPage />} />
       </Routes>
       <Chatbot />
+      <ScrollToTop />
     </ThemeProvider>
   );
 }
