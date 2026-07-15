@@ -10,8 +10,8 @@ import ToggleMode from "./ToggleMode";
 const Header = () => {
   return (
     <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12 xl:px-16 text-gray-900 dark:text-white">
-      <div className="flex gap-4 lg:gap-6">
-        <div>
+      <div className="flex gap-4 lg:gap-6 w-full sm:w-auto">
+        <div className="flex-shrink-0">
           <img
             src={ProfileImage}
             alt="Profile"
@@ -19,12 +19,17 @@ const Header = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 flex-1 min-w-0">
           <div className="flex flex-col gap-1">
-            <h3 className="text-lg lg:text-2xl font-bold flex items-center gap-2 text-gray-900 dark:text-white">
-              Raymund Notarion
-              <VerifiedCheck className="w-4 h-4 lg:w-5 lg:h-5" />
-            </h3>
+            <div className="flex justify-between items-center w-full gap-2">
+              <h3 className="text-lg lg:text-2xl font-bold flex items-center gap-2 text-gray-900 dark:text-white">
+                Raymund Notarion
+                <VerifiedCheck className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" />
+              </h3>
+              <div className="sm:hidden flex-shrink-0">
+                <ToggleMode />
+              </div>
+            </div>
             <h5 className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
               <Location className="w-4 h-4 text-gray-600 dark:text-gray-400" />
               Paniqui, Tarlac, Philippines
@@ -56,7 +61,9 @@ const Header = () => {
         </div>
       </div>
 
-      <ToggleMode />
+      <div className="hidden sm:block">
+        <ToggleMode />
+      </div>
     </header>
   );
 };
